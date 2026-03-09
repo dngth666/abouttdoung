@@ -43,15 +43,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-    <!-- EmailJS Library -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init({
-                publicKey: "YOUR_PUBLIC_KEY_HERE"
-            });
-        })();
-    </script>
 </head>
 
 <body>
@@ -333,8 +324,7 @@
                     <div class="skill-items">
                         <span class="skill-badge">Microsoft Office</span>
                         <span class="skill-badge">Google Workspace</span>
-                        <span class="skill-badge">Adobe Photoshop</span>
-                        <span class="skill-badge">Adobe Illustrator</span>
+                        <span class="skill-badge">Adobe Creative (Ps/Ai)</span>
                     </div>
                 </div>
 
@@ -352,15 +342,22 @@
                 <div class="contact-form glass-card">
                     <h3>Gửi tin nhắn</h3>
                     <form id="contactForm">
+                        <!-- THAY 'YOUR_ACCESS_KEY_HERE' BẰNG ACCESS KEY BẠN NHẬN ĐƯỢC TỪ WEB3FORMS -->
+                        <input type="hidden" name="access_key" value="c31a0611-a220-47cb-81ff-cc323d5a0078">
+
                         <div class="form-group">
-                            <input type="text" placeholder="Tên của bạn" required>
+                            <input type="text" name="name" placeholder="Tên của bạn" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" placeholder="Email của bạn" required>
+                            <input type="email" name="email" placeholder="Email của bạn" required>
                         </div>
                         <div class="form-group">
-                            <textarea placeholder="Tin nhắn của bạn" rows="5" required></textarea>
+                            <textarea name="message" placeholder="Tin nhắn của bạn" rows="5" required></textarea>
                         </div>
+
+                        <!-- Chặn spam bằng Honeypot (ẩn với người dùng) -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                         <button type="submit" class="btn btn-submit">Gửi Tin Nhắn</button>
                     </form>
                 </div>
@@ -408,9 +405,27 @@
 
     <!-- Fixed Left Sidebar - Explore -->
     <div class="sidebar sidebar-left">
-        <a href="https://facebook.com/tdoung813" target="_blank" class="sidebar-link">
+        <a href="https://drive.google.com/drive/folders/1bxddS6b-LFwspfOVQklWNRC3tIM0EVRL?usp=sharing" target="_blank"
+            class="sidebar-link">
             <span> <i class="fa-solid fa-magnifying-glass"></i> Khám phá</span>
         </a>
+    </div>
+
+    <!-- Music Player Background -->
+    <audio id="bgMusic" loop>
+        <source src="assets/musics/background-music.mp3" type="audio/mpeg">
+        <source src="assets/musics/background-music.m4a" type="audio/mp4"> <!-- Dự phòng định dạng m4a -->
+    </audio>
+
+    <!-- Fixed Music Toggle Button (Bottom Left) -->
+    <div class="music-toggle" id="musicToggle" title="Phát nhạc nền">
+        <i class="fa-solid fa-headphones"></i>
+        <!-- Hiệu ứng sóng nhạc lúc đang phát -->
+        <div class="music-waves">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
 
     <!-- Scroll to Top Button -->

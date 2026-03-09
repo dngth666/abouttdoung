@@ -8,7 +8,8 @@ export function initializeMenu() {
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (hamburger) {
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
             navMenu.classList.toggle('active');
             hamburger.classList.toggle('active');
         });
@@ -18,6 +19,15 @@ export function initializeMenu() {
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
             });
+        });
+
+        // Cập nhật lại JS để khi click vào menu Hamburger không bị xung đột, và đóng khi click ngoài menu
+        document.addEventListener('click', (e) => {
+            // Check if clicking outside menu AND outside hamburger
+            if (!navMenu.contains(e.target) && !hamburger.contains(e.target) && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
         });
 
         // ESC key to close menu

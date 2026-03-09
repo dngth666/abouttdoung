@@ -6,6 +6,7 @@ import { initializeMenu } from './modules/menu.js';
 import { initializeScrollEffects } from './modules/scroll.js';
 import { initializeStarfield } from './modules/canvas.js';
 import { initializeContactForm } from './modules/form.js';
+import { initializeMusicPlayer } from './modules/music.js';
 import { observeElementsForAnimation, initializeParallaxEffect, logInitialization } from './modules/utils.js';
 
 // Scroll to top button functionality
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeScrollEffects();
     initializeStarfield();
     initializeContactForm();
+    initializeMusicPlayer();
     observeElementsForAnimation();
     initializeParallaxEffect();
     initializeScrollToTop();

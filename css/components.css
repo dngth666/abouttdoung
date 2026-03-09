@@ -293,21 +293,11 @@
     transition: var(--transition);
 }
 
-/* 
-.sidebar-link::before {
-    content: '';
-    display: block;
-    width: 8px;
-    height: 8px;
-    background: var(--secondary-gradient);
-    border-radius: 50%;
-} */
-
 .sidebar-link:hover {
     background: var(--primary-gradient);
     border-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 0 20px rgba(47, 127, 254, 0.6);
-    transform: translateX(-10px);
+    transform: scale(1.15) translateY(-3px);
 }
 
 .sidebar-link:hover span {
@@ -363,4 +353,141 @@ a.project-card {
     grid-template-columns: 1fr;
     text-decoration: none;
     color: inherit;
+}
+
+/* ==========================================
+   MUSIC PLAYER TOGGLE BUTTON
+   ========================================== */
+
+.music-toggle {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 0, 0, 0.05);
+    /* Same as your sidebar icons */
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 550;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.music-toggle i {
+    font-size: 1.3rem;
+    background: var(--secondary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.music-toggle:hover {
+    background: var(--primary-gradient);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(47, 127, 254, 0.6);
+    transform: scale(1.15) translateY(-3px);
+}
+
+.music-toggle:hover i {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: white;
+}
+
+/* Music Playing State */
+.music-toggle.playing {
+    border-color: rgba(255, 0, 110, 0.6);
+    box-shadow: 0 0 15px rgba(255, 0, 110, 0.4);
+}
+
+.music-toggle.playing i {
+    background: linear-gradient(135deg, #ff006e, #8338ec);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.music-toggle.playing:hover i {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: white;
+}
+
+/* Equalizer Waves Effect */
+.music-waves {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 1;
+}
+
+.music-toggle.playing .music-waves {
+    opacity: 1;
+    visibility: visible;
+}
+
+.music-toggle.playing i {
+    opacity: 0;
+    /* Hide icon when playing to show waves */
+}
+
+/* Hide waves on hover to show icon again so user knows they can click to pause */
+.music-toggle.playing:hover .music-waves {
+    opacity: 0.2;
+}
+
+.music-toggle.playing:hover i {
+    opacity: 1;
+}
+
+.music-waves span {
+    display: block;
+    width: 3px;
+    height: 15px;
+    background: var(--secondary-gradient);
+    border-radius: 3px;
+    animation: bounce 1s infinite ease-in-out alternate;
+}
+
+.music-waves span:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.music-waves span:nth-child(2) {
+    animation-delay: 0.5s;
+    height: 25px;
+}
+
+.music-waves span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.music-toggle:hover .music-waves span {
+    background: white;
+}
+
+@keyframes bounce {
+    10% {
+        transform: scaleY(0.3);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
 }
