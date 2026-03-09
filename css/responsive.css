@@ -1,0 +1,230 @@
+/* ==========================================
+   RESPONSIVE DESIGN - Media Queries
+   ========================================== */
+
+/* Large Devices (1024px) */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .planet-container {
+        width: 500px;
+        height: 500px;
+    }
+
+}
+
+/* Tablets (768px) */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 0;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        width: 100%;
+        z-index: 999;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-link {
+        padding: 0.8rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero-avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 15px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .glass-card {
+        padding: 1.5rem;
+    }
+
+    .planet-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    /* Timeline Responsive */
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        flex-direction: column-reverse !important;
+        text-align: left !important;
+        padding-left: 100px;
+    }
+
+    .timeline-marker {
+        left: 30px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+
+    .timeline-content {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+/* Mobile Devices (480px) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    .contact-wrapper {
+        gap: 1.5rem;
+    }
+
+    .glass-card {
+        padding: 1rem;
+    }
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .planet-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .timeline-marker {
+        left: 22px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+
+    .timeline-item {
+        padding-left: 80px;
+        margin-bottom: 2rem;
+    }
+
+    .timeline::before {
+        left: 22px;
+    }
+
+    /* Sidebar responsive */
+    .sidebar-right {
+        right: 1rem;
+        bottom: 60px;
+        gap: 0.5rem;
+    }
+
+    .sidebar-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .sidebar-left {
+        left: 1rem;
+    }
+
+    .sidebar-link {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .scroll-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 1rem;
+        right: 1rem;
+        font-size: 1.2rem;
+    }
+
+    /* Contact QR responsive */
+    .contact-qr img.qr-code {
+        width: 180px;
+        height: 180px;
+    }
+}

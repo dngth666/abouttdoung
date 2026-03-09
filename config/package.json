@@ -1,0 +1,35 @@
+{
+  "name": "portfolio-cosmos",
+  "version": "1.0.0",
+  "description": "Portfolio Trang Web Vũ Trụ - Dương Ngọc Thắng",
+  "author": "Dương Ngọc Thắng",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "cosmos",
+    "web",
+    "javascript",
+    "html5",
+    "css3",
+    "responsive"
+  ],
+  "scripts": {
+    "dev": "npx http-server . -p 8000 -c-1",
+    "preview": "npx http-server . -p 3000 -o",
+    "build": "echo 'This is a static site, no build needed'",
+    "test": "echo 'No tests configured yet'"
+  },
+  "dependencies": {
+    "emailjs-com": "^3.2.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duongngocthang/portfolio-cosmos.git"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,25 @@
+/* ==========================================
+   CSS VARIABLES - Định Nghĩa Màu Sắc & Thiết Lập
+   ========================================== */
+
+:root {
+    /* Gradients */
+    --primary-gradient: linear-gradient(135deg, #ff0000, #110c2d, #1100ff);
+    --secondary-gradient: linear-gradient(135deg, #2f7ffe, #d1d1d1, #ff3539);
+    
+    /* Colors */
+    --glow-red: #ff006e;
+    --glow-blue: #3a86ff;
+    --glow-purple: #8338ec;
+    --text-light: #e0e0e0;
+    --text-lighter: #b0b0b0;
+    --accent-yellow: #ffd700;
+    
+    /* Shadows */
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 20px rgba(255, 0, 110, 0.3);
+    
+    /* Transitions */
+    --transition: all 0.3s ease;
+    --transition-fast: all 0.15s ease;
+}

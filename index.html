@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Basic SEO -->
+    <meta name="description" content="Portfolio của Dương Ngọc Thắng – Sinh viên Công nghệ Giáo dục, quan tâm đến AI trong giáo dục, phát triển web và gamification trong học tập.">
+    <meta name="author" content="Dương Ngọc Thắng">
+    <meta name="theme-color" content="#110c2d">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://duongngocthang.com">
+    <meta property="og:title" content="Dương Ngọc Thắng - Portfolio">
+    <meta property="og:description" content="Educational Technology Student | AI & Gamification in Education">
+    <meta property="og:image" content="https://duongngocthang.com/assets/images/Avatar.jpg">
+    <meta property="og:site_name" content="Duong Ngoc Thang Portfolio">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://duongngocthang.com">
+    <meta name="twitter:title" content="Dương Ngọc Thắng - Portfolio">
+    <meta name="twitter:description" content="Educational Technology Student | AI & Gamification in Education">
+    <meta name="twitter:image" content="https://duongngocthang.com/assets/images/Avatar.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" 
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='50' font-size='50' fill='%238338ec'>🌌</text></svg>">
+
+    <title>Dương Ngọc Thắng | Educational Technology & AI in Education</title>
+    
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- EmailJS Library -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "YOUR_PUBLIC_KEY_HERE"
+            });
+        })();
+    </script>
+</head>
+<body>
+    <!-- Canvas cho hiệu ứng sao băng -->
+    <canvas id="starfield"></canvas>
+    
+    <!-- Hình ảnh Planet - nằm giữa màn hình, mờ dần khi cuộn -->
+    <div class="planet-container" id="planet">
+        <img src="./assets/images/Planet.png" alt="Planet" class="planet-image">
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">tdoung</div>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link active">Giới thiệu</a>
+                <a href="#projects" class="nav-link">Hoạt động</a>
+                <a href="#highlights" class="nav-link">Sự kiện</a>
+                <a href="#skills" class="nav-link">Kỹ năng</a>
+                <a href="#contact" class="nav-link">Liên hệ</a>
+            </nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <!-- Avatar cá nhân -->
+            <img src="./assets/images/Avatar.jpg" alt="Avatar - Dương Ngọc Thắng" class="hero-avatar">
+            <h1 class="hero-title">Xin chào, tôi là <span class="gradient-text">Dương Ngọc Thắng</span></h1>
+            <p class="hero-subtitle">Sinh viên Công nghệ giáo dục <br> Ứng dụng trí tuệ nhân tạo trong giáo dục</p>
+            <a href="#projects" class="btn btn-glow">Xem Hoạt động</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Về tôi</h2>
+            <div class="glass-card about-card">
+                <p>
+Tôi hiện là sinh viên năm cuối ngành Công nghệ Giáo dục. 
+Tôi có kinh nghiệm cơ bản trong phát triển web, xử lý dữ liệu và 
+xây dựng các dự án công nghệ phục vụ học tập 
+và nghiên cứu. Trong quá trình học tập, tôi 
+chủ động tìm hiểu các công cụ lập trình, công 
+nghệ web và cách tích hợp các hệ thống thông minh 
+vào sản phẩm số.                
+                </p>
+                <p>
+Tôi đặc biệt quan tâm đến việc ứng dụng Trí tuệ nhân tạo 
+trong giáo dục, nhất là việc kết hợp AI với các nền tảng 
+web và hệ thống tương tác để giải quyết các vấn đề học tập. 
+Tôi mong muốn được tiếp cận môi trường làm việc chuyên nghiệp, 
+học hỏi quy trình phát triển sản phẩm AI, nâng cao năng lực kỹ 
+thuật và từng bước phát triển theo hướng xây dựng các ứng dụng 
+AI có giá trị thực tiễn
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Hoạt động nổi bật</h2>
+            <div class="projects-grid">
+                <a href="https://facebook.com/tdoung813" target="_blank" class="project-card glass-card">
+                    <div class="project-icon">✈️</div>
+                    <h3>Trao đổi nước ngoài</h3>
+                    <p>Tham gia Hành trình đỏ nghiên cứu - học tập (Trung Quốc)
+                        <br>Tham gia gPBL (Nhật Bản)
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Trung Quốc</span>
+                        <span class="tag">Nhật Bản</span>
+                    </div>
+                </a>
+
+                <a href="https://facebook.com/tdoung813" target="_blank" class="project-card glass-card">
+                    <div class="project-icon">📱</div>
+                    <h3>Sản phẩm EdTech</h3>
+                    <p> AI hỗ trợ học tập Xác suất thống kê HUST
+                    <br>Bài giảng tương tác
+                    <br>Trò chơi số tương tác
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">E-learning</span>
+                        <span class="tag">Game</span>
+                        <span class="tag">Gemini API - AI</span>
+                    </div>
+                </a>
+
+                <a href="https://facebook.com/tdoung813" target="_blank" class="project-card glass-card">
+                    <div class="project-icon">📋</div>
+                    <h3>Dự án thực tế</h3>
+                    <p>Chắp cánh STEM & Elearning
+                    <br>Chắp cánh AI & Quản lý giáo dục
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Lai Châu</span>
+                        <span class="tag">Bố Trạch - Quảng Bình</span>
+                        <span class="tag">Dế Xu Phình - Yên Bái</span>
+                        <span class="tag">Điện Biên Đông</span>
+                        <span class="tag">Lang Chánh - Thanh Hóa</span>
+                        <span class="tag">Hoàng Su Phì - Hà Giang</span>
+                    </div>
+                </a>
+
+                <a href="https://facebook.com/tdoung813" target="_blank" class="project-card glass-card">
+                    <div class="project-icon">📚</div>
+                    <h3>Nghiên cứu khoa học</h3>
+                    <p>Self Directed Learning in Higher Education (Public)
+                    <br>Gamification in Education: Class Cred (Ongoing)
+                    </p>
+                </a>
+
+                <a href="https://facebook.com/tdoung813" target="_blank" class="project-card glass-card">
+                    <div class="project-icon">🤝</div>
+                    <h3>Hoạt động ngoại khóa</h3>
+                    <p>Chủ nhiệm CLB EdTech
+                    <br>Đội Phó Sinh viên tình nguyện
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">EdTech Bách Khoa</span>
+                        <span class="tag">Đội Sinh viên Tình nguyện</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights/Milestones Section -->
+    <section id="highlights" class="highlights">
+        <div class="container">
+            <h2 class="section-title">Sự kiện</h2>
+            <div class="timeline">
+                <div class="timeline-item glass-card">
+                    <div class="timeline-marker">📍</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">2022</h3>
+                        <p class="timeline-subtitle">Đại học Bách khoa Hà Nội</p>
+                        <p class="timeline-desc">Bắt đầu học tập tại Đại học Bách khoa Hà Nội, chuyên ngành Công nghệ giáo dục</p>
+                        <div class="timeline-image">
+                            <img src="./assets/images/Planet.png" alt="HUST 2022">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-card">
+                    <div class="timeline-marker">🏆</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">2023-2024</h3>
+                        <p class="timeline-subtitle">Phó Đội SVTN</p>
+                        <p class="timeline-desc">Đóng góp vào hoạt động của Đội Sinh viên Tình nguyện, hỗ trợ các hoạt động cộng đồng và giáo dục.</p>
+                        <div class="timeline-image">
+                            <img src="./assets/images/Planet.png" alt="SVTN 2023">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-card">
+                    <div class="timeline-marker">🌲</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">2024-2025</h3>
+                        <p class="timeline-subtitle">Chủ nhiệm CLB EdTech</p>
+                        <p class="timeline-desc">Lãnh đạo CLB EdTech Bách Khoa, tổ chức các hoạt động workshop, nghiên cứu khoa học ứng dụng công nghệ trong giáo dục.</p>
+                        <div class="timeline-image">
+                            <img src="./assets/images/Planet.png" alt="EdTech CLB">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-card">
+                    <div class="timeline-marker">📖</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">11/2025</h3>
+                        <p class="timeline-subtitle">Hành trình đỏ Nghiên cứu học tập</p>
+                        <p class="timeline-desc">Tham gia chương trình Hành trình đỏ Nghiên cứu học tập tại Vũ Hán và Trùng Khánh, Trung Quốc</p>
+                        <div class="timeline-image">
+                            <img src="./assets/images/Planet.png" alt="China 2025">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-card">
+                    <div class="timeline-marker">👥</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">02/2026</h3>
+                        <p class="timeline-subtitle">gPBL 2026 - IoT. LLM for Sustainable Development</p>
+                        <p class="timeline-desc">Tham gia gPBL 2026 chủ đề ứng dụng IoT và LLM diễn ra tại Shibaura Institute of Technology, Tokyo, Nhật Bản</p>
+                        <div class="timeline-image">
+                            <img src="./assets/images/Planet.png" alt="gPBL Tokyo 2026">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item glass-card">
+                    <div class="timeline-marker">🎯</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">2026</h3>
+                        <p class="timeline-subtitle">Tiếp tục nghiên cứu và làm việc</p>
+                        <p class="timeline-desc">Kết hợp kiến thức technology với giáo dục, tìm kiếm các cơ hội làm việc trong lĩnh vực EdTech và AI for Education.</p>
+                        <div class="timeline-image">
+                            <img src="./assets/images/Planet.png" alt="Future Goals">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Kỹ năng</h2>
+            <div class="skills-container">
+                <div class="skill-group glass-card">
+                    <h3 class="skill-category">Developer</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">HTML</span>
+                        <span class="skill-badge">CSS</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Nodejs</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">SQL</span>
+                        <span class="skill-badge">Git/GitHub</span>
+                        <span class="skill-badge">UI/UX Design</span>
+                        <span class="skill-badge">WebGL</span>
+                        <span class="skill-badge">ThreeJS</span>
+                    </div>
+                </div>
+
+                <div class="skill-group glass-card">
+                    <h3 class="skill-category">Language & Soft Skills</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">Tiếng Anh B2</span>
+                        <span class="skill-badge">Làm việc nhóm</span>
+                        <span class="skill-badge">Giao tiếp</span> 
+                        <span class="skill-badge">Lên kế hoạch</span>
+                        <span class="skill-badge">Quản lý thời gian</span>
+                    </div>
+                </div>
+
+                <div class="skill-group glass-card">
+                    <h3 class="skill-category">Office & Tools</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">Microsoft Office</span>
+                        <span class="skill-badge">Google Workspace</span>
+                        <span class="skill-badge">Adobe Photoshop</span>
+                        <span class="skill-badge">Adobe Illustrator</span>
+                    </div>
+                </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Liên hệ</h2>
+            <div class="contact-wrapper">
+                <div class="contact-form glass-card">
+                    <h3>Gửi tin nhắn</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Tên của bạn" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email của bạn" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Tin nhắn của bạn" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Gửi Tin Nhắn</button>
+                    </form>
+                </div>
+
+                <div class="contact-qr glass-card">
+                    <h3>Facebook QR Code</h3>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://facebook.com/tdoung813" alt="Facebook QR Code" class="qr-code">
+                    <p>Quét mã để kết nối trên Facebook</p>
+                </div>
+
+                <div class="contact-links glass-card">
+                    <h3>Địa chỉ Mạng xã hội</h3>
+                    <p>
+<i class="fa-brands fa-square-facebook"></i> Facebook: <a href="https://facebook.com/tdoung813" target="_blank">Dương Ngọc Thắng</a>
+<br><i class="fab fa-instagram"></i> Instagram: <a href="https://instagram.com/tdoung813" target="_blank">@tdoung813</a>
+<br><i class="fab fa-github"></i> GitHub: <a href="https://github.com/dngth666" target="_blank">dngth666</a>
+<br><i class="fas fa-envelope"></i> Email: <a href="mailto:dngth666@gmail.com">dngth666@gmail.com</a>
+<br><i class="fas fa-envelope"></i> Email: <a href="mailto:Thang.DN221870@sis.hust.edu.vn">Thang.DN221870@sis.hust.edu.vn</a>
+</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fixed Right Sidebar - Contact Icons -->
+    <div class="sidebar sidebar-right">
+        <a href="https://facebook.com/tdoung813" target="_blank" class="sidebar-icon" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com/tdoung813" target="_blank" class="sidebar-icon" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://github.com/dngth666" target="_blank" class="sidebar-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:dngth666@gmail.com" class="sidebar-icon" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <!-- Fixed Left Sidebar - Explore -->
+    <div class="sidebar sidebar-left">
+        <a href="https://facebook.com/tdoung813" target="_blank" class="sidebar-link">
+            <span>Khám phá</span>
+        </a>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Dương Ngọc Thắng</p>
+    </footer>
+
+    <!-- Main JavaScript Module (ES6 Modules) -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
