@@ -133,8 +133,8 @@
     border-radius: 20px;
     object-fit: cover;
     border: 3px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 30px rgba(255, 0, 110, 0.3), 
-                inset 0 0 30px rgba(255, 0, 110, 0.1);
+    box-shadow: 0 0 30px rgba(255, 0, 110, 0.3),
+        inset 0 0 30px rgba(255, 0, 110, 0.1);
     animation: floatAvatar 3s ease-in-out infinite;
 }
 
@@ -307,20 +307,11 @@ section {
     margin: 0 auto;
 }
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 5px;
-    height: 100%;
-    z-index: 0;
-    background: linear-gradient(180deg, rgba(255, 215, 0, 0.9) 0%, rgba(149, 159, 10, 0.6) 50%, rgba(241, 255, 117, 0.9) 100%);
-}
+/* `.timeline::before` removed to avoid glass-card blur; handled by `.timeline-item::before` */
 
 .timeline-item {
     display: flex;
-    gap: 2rem;
+    justify-content: space-between;
     margin-bottom: 3rem;
     position: relative;
     animation: fadeInUp 0.8s ease backwards;
@@ -328,12 +319,65 @@ section {
     z-index: 0;
 }
 
-.timeline-item:nth-child(1) { animation-delay: 0.1s; }
-.timeline-item:nth-child(2) { animation-delay: 0.2s; }
-.timeline-item:nth-child(3) { animation-delay: 0.3s; }
-.timeline-item:nth-child(4) { animation-delay: 0.4s; }
-.timeline-item:nth-child(5) { animation-delay: 0.5s; }
-.timeline-item:nth-child(6) { animation-delay: 0.6s; }
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: -3rem;
+    /* Spans the gap to the next item */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    background: rgb(0, 94, 255);
+    z-index: -1;
+}
+
+.timeline-item:last-child::before {
+    bottom: 0;
+    /* No connection beyond the last item */
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: -3rem;
+    /* Spans the gap to the next item */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    background: rgb(0, 94, 255);
+    z-index: -1;
+}
+
+.timeline-item:last-child::before {
+    bottom: 0;
+    /* No connection beyond the last item */
+}
+
+.timeline-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.timeline-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.timeline-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.timeline-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.timeline-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.timeline-item:nth-child(6) {
+    animation-delay: 0.6s;
+}
 
 .timeline-item:nth-child(odd) {
     flex-direction: row;
@@ -351,17 +395,35 @@ section {
     transform: translateX(-50%);
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #ffd700, #ffed4e);
-    border: 3px solid rgba(255, 215, 0, 0.5);
+    background: var(--primary-gradient);
+    border: 3px solid rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    z-index: 10;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    animation: pulse-white 2s ease-in-out infinite;
     top: 40px;
+    transition: var(--transition);
+}
+
+.timeline-marker:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 1);
+    filter: brightness(1.2);
+}
+
+@keyframes pulse-white {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    }
 }
 
 .timeline-content {
@@ -374,7 +436,7 @@ section {
     color: #fff;
     margin-bottom: 0.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    background: var(--secondary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -382,7 +444,7 @@ section {
 
 .timeline-subtitle {
     font-size: 1rem;
-    color: #ffd700;
+    color: #2f7ffe;
     margin-bottom: 0.8rem;
     font-weight: 600;
 }

@@ -106,6 +106,7 @@
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -113,27 +114,36 @@
 }
 
 @keyframes floatAvatar {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-15px);
     }
 }
 
 @keyframes floatPlanet {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px) scale(1);
     }
+
     50% {
         transform: translateY(-25px) scale(1.05);
     }
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
     }
+
     50% {
         box-shadow: 0 0 40px rgba(255, 215, 0, 0.7);
     }
@@ -144,6 +154,7 @@
         transform: translateX(-50%) translateY(-50%) rotate(45deg) scaleX(0.2) scaleY(1.5);
         opacity: 0.5;
     }
+
     100% {
         transform: translateX(50%) translateY(50%) rotate(45deg) scale(0.2) scaleY(1.5);
         opacity: 0.5;
@@ -154,6 +165,7 @@
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
         transform: translate(-1000px, -1000px);
@@ -161,9 +173,12 @@
 }
 
 @keyframes glow-pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
     }
+
     50% {
         box-shadow: 0 0 40px rgba(255, 0, 110, 0.6);
     }
@@ -174,10 +189,11 @@
    ========================================== */
 
 .timeline-image {
-    margin-top: 1rem;
+    width: calc(50% - 40px);
+    display: flex;
+    align-items: center;
     border-radius: 10px;
     overflow: hidden;
-    max-width: 100%;
 }
 
 .timeline-image img {
@@ -223,21 +239,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 0, 0, 0.1);
+    background: rgba(255, 0, 0, 0.05);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
-    color: var(--secondary-gradient);
     text-decoration: none;
     transition: var(--transition);
     font-size: 1.3rem;
 }
 
+.sidebar-icon i {
+    background: var(--secondary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: var(--transition);
+}
+
 .sidebar-icon:hover {
-    background: rgba(255, 0, 0, 0.3);
-    border-color: #bdd8ff;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    background: var(--primary-gradient);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(47, 127, 254, 0.6);
     transform: scale(1.15) translateY(-3px);
+}
+
+.sidebar-icon:hover i {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: white;
 }
 
 .sidebar-link {
@@ -245,10 +274,9 @@
     align-items: center;
     gap: 1rem;
     text-decoration: none;
-    color: var(--secondary-gradient);
     font-weight: 600;
     padding: 0.8rem 1rem;
-    background: rgba(255, 0, 0, 0.1);
+    background: rgba(255, 0, 0, 0.05);
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
@@ -257,20 +285,35 @@
     writing-mode: horizontal-tb;
 }
 
+.sidebar-link span {
+    background: var(--secondary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: var(--transition);
+}
+
+/* 
 .sidebar-link::before {
     content: '';
     display: block;
     width: 8px;
     height: 8px;
-    background: var(--primary-gradient);
+    background: var(--secondary-gradient);
     border-radius: 50%;
-}
+} */
 
 .sidebar-link:hover {
-    background: rgba(255, 255, 255, 0.3);
-    border-color: var(--secondary-gradient);
-    box-shadow: var(--secondary-gradient);
+    background: var(--primary-gradient);
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(47, 127, 254, 0.6);
     transform: translateX(-10px);
+}
+
+.sidebar-link:hover span {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: white;
 }
 
 /* ==========================================

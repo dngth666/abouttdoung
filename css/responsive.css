@@ -109,7 +109,7 @@
     }
 
     /* Timeline Responsive */
-    .timeline::before {
+    .timeline-item::before {
         left: 30px;
     }
 
@@ -129,6 +129,11 @@
     .timeline-content {
         width: 100%;
         padding: 1rem;
+    }
+
+    .timeline-image {
+        width: 100%;
+        margin-top: 1rem;
     }
 }
 
@@ -188,8 +193,9 @@
         margin-bottom: 2rem;
     }
 
-    .timeline::before {
+    .timeline-item::before {
         left: 22px;
+        bottom: -2rem;
     }
 
     /* Sidebar responsive */
