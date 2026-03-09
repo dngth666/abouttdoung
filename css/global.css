@@ -17,8 +17,8 @@ body {
     line-height: 1.6;
     color: var(--text-light);
     background-color: #000;
-    background: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.65)), 
-                url('../assets/images/Cosmo Background.jpg') center/cover fixed no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.65)),
+        url('../assets/images/Cosmo Background.jpg') center/cover fixed no-repeat;
     min-height: 100vh;
     overflow-x: hidden;
 }

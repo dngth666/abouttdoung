@@ -590,7 +590,7 @@ section {
     width: 250px;
     height: 250px;
     border-radius: 10px;
-    background: white;
+    background: rgba(0, 0, 0, 0);
     padding: 10px;
     transition: var(--transition);
 }
